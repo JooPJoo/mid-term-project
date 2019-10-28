@@ -1,0 +1,324 @@
+/*https://editor.p5js.org/popomojo/sketches/IXO9TAmwc*/
+
+function preload() 
+  {
+  soundFormats("wav");
+    c1ToneDoe = loadSound("c.wav");
+    dToneRe = loadSound("d.wav");
+    eToneMi = loadSound("e.wav");
+    fToneFa = loadSound("f.wav");
+    gToneSol = loadSound("g.wav");
+    aToneLa = loadSound("232004__danmitch3ll__xylophone-a.wav");
+    bToneSi = loadSound("232003__danmitch3ll__xylophone-b.wav");
+    c2ToneDoeHigh = loadSound("232001__danmitch3ll__xylophone-c2.wav");
+  }
+
+var c1ToneDoe;
+var dToneRe;
+var eToneMi;
+var fToneFa;
+var gToneSol;
+var aToneLa;
+var bToneSi;
+var c2ToneDoeHigh;
+
+
+function setup() 
+  {
+    createCanvas(825, 400);
+  }
+  
+  var ball1x = 62.5; //these positions on the x-axis indicated where each ball starts
+  var ball2x = 162.5;
+  var ball3x = 262.5;
+  var ball4x = 362.5;
+  var ball5x = 462.5;
+  var ball6x = 562.5;
+  var ball7x = 662.5;
+  var ball8x = 762.5;
+  
+  var ballY = 0;
+  
+  var ballSpeed = 25; //drumstick dropping speed
+
+  var ball1Active = 0; //boolean statement for starting and ending drumstick falling
+  var ball2Active = 0;
+  var ball3Active = 0;
+  var ball4Active = 0;
+  var ball5Active = 0;
+  var ball6Active = 0;
+  var ball7Active = 0;
+  var ball8Active = 0;
+
+  
+
+function draw() 
+  {
+    background(0, 10);
+    fill(255);
+    strokeWeight(2);
+    
+    //rect(0, 0, 825, 135);
+    //fill(200);
+    
+    textSize(28);
+    text ('This is an Interactive Xylophone!', 210, 50);
+    text ('Please press keys A,S,D,F,G,H,J,K to play a sound!', 80, 100);
+    
+
+    if(ball1Active == 1) 
+      {
+        fill(153, 51, 255);
+        ellipse(ball1x, ballY, 50, 50);
+        rect(25, 375, 75, 25);
+        //fill(255)
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              //fill(153, 51, 255);
+              //rect(25, 375, 75, 25);
+              c1ToneDoe.play();
+              ball1Active = 0;
+              textSize(75);
+              fill(153, 51, 255);
+              rect(25, 375, 75, 25); 
+              fill(153, 51, 255);
+              text ('Do', random(100, 700), random(200, 320));
+            }
+        
+            //fill(153, 51, 255);
+
+      }
+    
+    //C1 block
+    rect(25, 375, 75, 25);
+
+    if(ball2Active == 1) 
+      {
+        fill(51, 51, 255);
+        ellipse(ball2x, ballY, 50, 50);
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              //fill(51, 51, 255);
+              //rect(125, 375, 75, 25);
+              dToneRe.play();
+              ball2Active = 0;
+              textSize(75);
+              rect(125, 375, 75, 25);
+              fill(51, 51, 255);
+              //fill(255)
+              text ('Re', random(100, 700), random(200, 320));              
+            }
+      }
+    
+    //D block
+    rect(125, 375, 75, 25);
+
+    if(ball3Active == 1) 
+      {
+        fill(51, 255, 255);
+        ellipse(ball3x, ballY, 50, 50);
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              fill(51, 255, 255);
+              rect(225, 375, 75, 25);
+              eToneMi.play();
+              ball3Active = 0;
+              textSize(75);
+              fill(51, 255, 255);
+              //fill(255)
+              text ('Mi', random(100, 700), random(200, 320));              
+            }
+      }
+    
+      //E block
+      rect(225, 375, 75, 25);
+
+    if(ball4Active == 1) 
+      {
+        fill(0, 102, 0);
+        ellipse(ball4x, ballY, 50, 50);
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              fill(0, 102, 0);
+              rect(325, 375, 75, 25);
+              fToneFa.play();
+              ball4Active = 0;
+              textSize(75);
+              fill(0, 102, 0);
+              //fill(255)
+              text ('Fa', random(100, 700), random(200, 320));              
+            }
+      }
+    
+    //F block
+    rect(325, 375, 75, 25);  
+
+    if(ball5Active == 1) 
+      {
+        fill(0, 255, 0);
+        ellipse(ball5x, ballY, 50, 50);
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              fill(0, 255, 0);
+              rect(425, 375, 75, 25);
+              gToneSol.play();
+              ball5Active = 0;
+              textSize(75);
+              fill(0, 255, 0);
+              //fill(255)
+              text ('Sol', random(100, 700), random(200, 320));              
+            }
+      }
+    
+    //G block
+    rect(425, 375, 75, 25);  
+
+    if(ball6Active == 1) 
+      {
+        fill(255, 255, 51);
+        ellipse(ball6x, ballY, 50, 50);
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              fill(255, 255, 51);
+              rect(525, 375, 75, 25);
+              aToneLa.play();
+              ball6Active = 0;
+              textSize(75);
+              fill(255, 255, 51);
+              //fill(255);
+              text ('La', random(100, 700), random(200, 320));              
+            }
+      }
+  
+    //A block
+    rect(525, 375, 75, 25);    
+
+    if(ball7Active == 1) 
+      {
+        fill(255, 153, 51);
+        ellipse(ball7x, ballY, 50, 50);
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              fill(255, 153, 51);
+              rect(625, 375, 75, 25);
+              bToneSi.play();
+              ball7Active = 0;
+              textSize(75);
+              fill(255, 153, 51);
+              //fill(255);
+              text ('Si', random(100, 700), random(200, 320));              
+              //text ('SI', 625, 375);
+            }
+      }
+  
+    //B block
+    rect(625, 375, 75, 25);    
+
+    if(ball8Active == 1) 
+      {
+        fill(255, 51, 51);
+        ellipse(ball8x, ballY, 50, 50);
+        ballY = ballY + ballSpeed;
+  
+          if (ballY > height - 50) 
+            {
+              background(0, 100);
+              fill(255, 51, 51);
+              rect(725, 375, 75, 25);
+              c2ToneDoeHigh.play();
+              ball8Active = 0;
+              textSize(75);
+              fill(255, 51, 51);
+              //fill(255);
+              text ('Doe', random(100, 700), random(200, 320));              
+            }
+      }
+    
+    //C2 block
+    rect(725, 375, 75, 25);  
+    
+    //rect(0, 0, 825, 135);
+    //fill(200);
+
+  }
+
+function keyPressed() 
+  {
+    //C1 ball
+    if (key == 'a' && ball1Active == 0) 
+      {
+      
+        ball1Active = 1;
+        ballY = 0;
+      }
+
+    //D ball
+    if (key == 's' && ball2Active == 0) 
+      {  
+        ball2Active = 1;
+        ballY = 0;
+      }
+
+    //E ball
+    if (key == 'd' && ball3Active == 0) 
+      {
+        ball3Active = 1;
+        ballY = 0;
+      }
+  
+    //F ball
+    if (key == 'f' && ball4Active == 0) 
+      {
+        ball4Active = 1;
+        ballY = 0;
+      }
+  
+    //G ball
+    if (key == 'g' && ball5Active == 0) 
+      {
+        ball5Active = 1;
+        ballY = 0;
+      }
+  
+    //A ball
+    if (key == 'h' && ball6Active == 0) 
+      {
+        ball6Active = 1;
+        ballY = 0;
+      }
+  
+    //B ball
+    if (key == 'j' && ball7Active == 0) 
+      {
+        ball7Active = 1;
+        ballY = 0;
+      }
+  
+    //C2 ball
+    if (key == 'k' && ball8Active == 0) 
+      {
+        ball8Active = 1;
+        ballY = 0;
+      }
+  }
